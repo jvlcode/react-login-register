@@ -19,7 +19,7 @@ export default function RegisterPage(){
 
     const handleSubmit = (event)=>{
         event.preventDefault();
-        let errors =initialStateErrors; 
+        let errors = {..initialStateErrors}; 
         let hasError = false; 
         if (inputs.name == "") {
             errors.name.required =true;
@@ -51,7 +51,7 @@ export default function RegisterPage(){
             })
         }
         console.log(initialStateErrors,errors);
-        setErrors(errors);
+        setErrors({..errors});
     }
 
     const [inputs,setInputs] = useState({
